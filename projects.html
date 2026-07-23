@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Dias George</title>
+<meta name="description" content="Production systems built end-to-end by Dias George, architected personally and implemented with AI coding agents: a multiplayer card game and a cricket stats platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span><strong>Dias George</strong><span class="path">/projects</span></a>
+    <div class="nav-links">
+      <a href="index.html"><span class="path-prefix">~/</span>home</a>
+      <a href="about.html"><span class="path-prefix">~/</span>about</a>
+      <a href="resume.html"><span class="path-prefix">~/</span>resume</a>
+      <a href="projects.html" class="current"><span class="path-prefix">~/</span>projects</a>
+    </div>
+    <a href="mailto:dias.george@gmail.com" class="nav-cta">get in touch</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">menu</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="eyebrow">// personal projects</div>
+    <h1>Two systems, architected solo, built with AI agents.</h1>
+    <p>I design the schema, the service architecture, and the hard parts by hand — then direct AI coding agents to complete implementation. Both of these are live, production systems, not demos.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <div class="project-hero">
+      <div>
+        <div class="meta-row">
+          <span class="status-pill"><span class="dot"></span>live</span>
+          <span>2025</span>
+          <span>·</span>
+          <span>35,000+ lines</span>
+        </div>
+        <h3>28 — Multiplayer Card Game</h3>
+        <p>Designed and built a real-time multiplayer platform for "28" (Twenty-Eight), an Indian trick-taking card game popular in Kerala, played by 4 players in fixed partnerships. I personally built the game engine, service architecture, and database schema, then directed AI coding agents to complete implementation across a 35,000+ line, three-service production codebase.</p>
+        <ul class="feature-list">
+          <li>Real-time game engine in Node.js (Express + Socket.IO) driving the full two-round bidding phase, trump selection, and trick-play logic over WebSockets, synchronizing live 4-player sessions.</li>
+          <li>Python (FastAPI + SQLAlchemy/Alembic) REST API for auth, accounts, and scoring, and a cross-platform Flutter client (Riverpod + Freezed) shipping to Android, iOS, web, and desktop — both sharing one PostgreSQL database and JWT auth.</li>
+          <li>Rule-based AI bots that autonomously bid, select trump, and play tricks, plus production hardening: transaction-wrapped game mutations, bidding-phase/card-ownership gates, and bcrypt password hashing.</li>
+          <li>Deployed and hosted on Hetzner Cloud (systemd services) behind Cloudflare, with a custom deploy script automating git sync, dependency installs, DB migrations, service restarts, and Flutter web builds.</li>
+        </ul>
+        <div class="project-actions">
+          <a href="https://bid28.com" class="btn btn-ghost-dark">Play live →</a>
+        </div>
+      </div>
+      <div>
+      <div class="project-preview">
+        <div class="project-preview-bar"><span></span><span></span><span></span></div>
+        <img src="assets/img/bid28-preview.jpg" alt="Bid28 live site screenshot" loading="lazy">
+      </div>
+      <div class="stack-block">
+        <strong>Client</strong> — Flutter 3.x (Dart), Riverpod, Freezed, Socket.IO client<br><br>
+        <strong>Backend</strong> — Python/FastAPI/SQLAlchemy/Alembic (API) + Node.js/Express/Socket.IO/Sequelize (game engine), PostgreSQL<br><br>
+        <strong>AI Bots</strong> — Node.js, Socket.IO client, Axios<br><br>
+        <strong>Infrastructure</strong> — Hetzner Cloud, systemd, Cloudflare, custom bash deploy pipeline (git + SSH + rsync)
+      </div>
+      </div>
+    </div>
+
+    <div class="project-hero">
+      <div>
+        <div class="meta-row">
+          <span class="status-pill"><span class="dot"></span>live</span>
+          <span>2026</span>
+          <span>·</span>
+          <span>16,000+ lines</span>
+        </div>
+        <h3>Cricket Stats &amp; Live Scoring</h3>
+        <p>Designed and built a full-stack cricket data and live-scoring platform covering 19 IPL seasons, 800+ players, live match scores, and fan voting. I personally designed the PostgreSQL schema, data pipelines, and core ranking algorithm, then directed AI coding agents to complete implementation across a 16,000+ line codebase spanning data pipelines, API, and frontend.</p>
+        <ul class="feature-list">
+          <li>Three data pipelines normalizing 19 seasons of squads and stats into PostgreSQL, with cross-source player name resolution, and a Python/FastAPI REST API (~20 endpoints) with Firebase auth (Google + phone OTP) gating a one-vote-per-user ballot system.</li>
+          <li>Live-scoring provider integration with Redis caching, a responsive HTML/JS/Tailwind frontend with leaderboards and live match modals, deployed via Docker (Postgres, Redis, FastAPI, nginx) and validated with load tests.</li>
+        </ul>
+        <div class="project-actions">
+          <a href="hof-demo/live.html" class="btn btn-ghost-dark">View demo →</a>
+        </div>
+      </div>
+      <div>
+      <div class="project-preview">
+        <div class="project-preview-bar"><span></span><span></span><span></span></div>
+        <img src="assets/img/crichof-preview.jpg" alt="Cricket Hall of Fame live site screenshot" loading="lazy">
+      </div>
+      <div class="stack-block">
+        <strong>Client</strong> — Vanilla HTML/CSS/JS, Tailwind CSS, Chart.js, Firebase JS SDK<br><br>
+        <strong>Backend</strong> — Python, FastAPI, psycopg3, PostgreSQL, Redis<br><br>
+        <strong>Auth</strong> — Firebase Admin SDK<br><br>
+        <strong>Infrastructure</strong> — Docker, docker-compose, nginx
+      </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap" style="text-align:center;">
+    <div class="eyebrow" style="justify-content:center;">// why this matters for the day job</div>
+    <h2 style="max-width: 46ch; margin: 0 auto 16px;">Same playbook I run at Aptean — architecture first, AI agents for execution.</h2>
+    <p style="max-width: 52ch; margin: 0 auto;">The AI-assisted workflows I rolled out for a 9-person engineering team are the same ones I use to ship these solo. I don't ask a team to adopt tooling I haven't stress-tested myself.</p>
+    <div style="margin-top: 28px;">
+      <a href="resume.html" class="btn btn-ghost-dark">See the day-job track record →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h3>Let's talk about the role.</h3>
+        <p style="color: var(--ink-text-dim); max-width: 46ch;">Open to Application Development Manager and senior engineering leadership roles. Based in Bangalore, India.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:dias.george@gmail.com">dias.george@gmail.com</a>
+        <a href="tel:+919112084082">+91 9112084082</a>
+        <a href="resume.html">Resume</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dias George</span>
+      <span>Bangalore, India</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* Static demo shell for the Cricket Hall of Fame project preview */
+.demo-topbar {
+  background: var(--ink);
+  color: var(--ink-text-dim);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  padding: 10px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line-on-ink);
+}
+.demo-topbar a { color: var(--signal); text-decoration: none; }
+.demo-topbar a:hover { text-decoration: underline; }
+.demo-topbar .demo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-text-dim);
+}
+.demo-topbar .demo-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  display: inline-block;
+}
+
+.demo-nav {
+  background: #0E1526;
+  border-bottom: 1px solid rgba(236,233,222,0.1);
+  padding: 12px var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+.demo-nav .demo-brand { color: var(--ink-text); font-weight: 600; margin-right: 12px; }
+.demo-nav a {
+  color: var(--ink-text-dim);
+  text-decoration: none;
+  padding: 4px 2px;
+}
+.demo-nav a.active { color: var(--signal); border-bottom: 2px solid var(--signal); }
+.demo-nav a:hover { color: var(--ink-text); }
+
+.demo-shot {
+  display: block;
+  width: 100%;
+  max-width: 1137px;
+  margin: 0 auto;
+  height: auto;
+}
+.demo-shot-wrap { background: #0b1220; }
+
+.demo-footer {
+  text-align: center;
+  padding: 28px var(--gutter) 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--slate-dim);
+  background: var(--paper);
+}
+.demo-footer a { color: var(--signal-dim); }
