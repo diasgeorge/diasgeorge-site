@@ -480,6 +480,8 @@ footer.site-footer {
   border-radius: 999px;
 }
 .status-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.status-pill.demo { color: var(--signal-dim); border-color: rgba(239,162,63,0.4); }
+.status-pill.demo .dot { background: var(--signal-dim); }
 .project-hero h3 { font-size: 24px; margin-bottom: 14px; }
 .project-hero .stack-block { font-family: var(--font-mono); font-size: 12.5px; color: var(--slate); background: var(--paper-2); border: 1px solid var(--line-on-paper); border-radius: 6px; padding: 16px 18px; line-height: 1.9; }
 .project-hero .stack-block strong { color: var(--ink); font-weight: 600; }
